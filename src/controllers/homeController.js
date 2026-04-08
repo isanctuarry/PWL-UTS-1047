@@ -1,9 +1,13 @@
-import { render } from "../config/viewEngine.js";
+import { render } from "../config/viewEngine";
+import * as model from "../models/mahasiswaModel";
 
 export const home = async (c) => {
-  const html = await render("home", {
-    title: "Dashboard Bun MVC",
-    message: "Hello dari Bun + Tailwind 🚀",
-  }, c);
-  return c.html(html);
+  const data = await model.getAll(); 
+  
+  return c.html(
+    await render("home", {
+      title: "Dashboard",
+      mahasiswa: data, 
+    }, c)
+  );
 };

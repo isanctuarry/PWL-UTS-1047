@@ -1,7 +1,7 @@
 <div class="grid grid-cols-3 gap-4 mb-6">
   <div class="bg-white p-6 rounded-2xl shadow">
     <p class="text-gray-500">Total Mahasiswa</p>
-    <p class="text-3xl font-bold text-blue-600">120</p>
+    <p class="text-3xl font-bold text-blue-600"><%= mahasiswa.length %></p>
   </div>
   <div class="bg-white p-6 rounded-2xl shadow">
     <p class="text-gray-500">Total Dosen</p>
@@ -26,8 +26,8 @@
       <% mahasiswa.forEach((m, i) => { %>
       <tr class="border-b">
         <td class="p-2 text-center"><%= i + 1 %></td>
-        <td class="p-2"><%= m.nama %></td>
-        <td class="p-2"><%= m.nim %></td>
+        <td class="p-2 text-center"><%= m.nama %></td>
+        <td class="p-2 text-center"><%= m.nim %></td>
       </tr>
       <% }) %>
     </tbody>
